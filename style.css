@@ -1,49 +1,29 @@
 
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-  font-family: 'Courier New', monospace;
-  color: white;
+body {
   background: black;
-}
-
-#bg-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgba(0,0,0,0.5);
+  color: white;
+  font-family: 'Courier New', monospace;
   padding: 2rem;
-  border-radius: 12px;
-  max-width: 90%;
 }
-
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
   color: #f4d942;
+  text-align: center;
 }
-
-h2 {
-  font-size: 1.5rem;
+.track {
+  margin: 1rem 0;
+}
+.track h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
   color: #ff9966;
 }
-
+audio {
+  width: 100%;
+}
 footer {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
   font-size: 0.9rem;
-  opacity: 0.85;
+  opacity: 0.8;
 }
