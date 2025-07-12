@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disco Rotante – Full EP</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #f4d942;
+      text-align: center;
+    }
+    .track {
+      margin: 1rem 0;
+    }
+    .track h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+      color: #ff9966;
+    }
+    audio {
+      width: 100%;
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h1>DISCO ROTANTE – Full EP</h1>
+
+  <div class="track">
+    <h2>1. A Perfect Maligned Situation</h2>
+    <audio controls id="track1">
+      <source src="Track_01_A_Perfect_Maligned_Situation_Mastered.wav" type="audio/wav">
+    </audio>
+  </div>
+
+  <div class="track">
+    <h2>2. What Am I Trying To Say Here</h2>
+    <audio controls id="track2">
+      <source src="Track_02_What_Am_I_Trying_To_Say_Here_Mastered.wav" type="audio/wav">
+    </audio>
+  </div>
+
+  <div class="track">
+    <h2>3. Communication Frequency</h2>
+    <audio controls id="track3">
+      <source src="Track_03_Communication_Frequency_Mastered.wav" type="audio/wav">
+    </audio>
+  </div>
+
+  <div class="track">
+    <h2>4. Extended Play</h2>
+    <audio controls id="track4">
+      <source src="Track_04_Interlude_Mastered.wav" type="audio/wav">
+    </audio>
+  </div>
+
+  <div class="track">
+    <h2>5. That's Me</h2>
+    <audio controls id="track5">
+      <source src="Track_05_Thats_Me_Mastered.wav" type="audio/wav">
+    </audio>
+  </div>
+
+  <div class="track">
+    <h2>6. The Hope In You</h2>
+    <audio controls id="track6">
+      <source src="Track_06_The_Hope_In_You_Mastered.wav" type="audio/wav">
+    </audio>
+  </div>
+
+  <div class="track">
+    <h2>7. Heart Is Dirt</h2>
+    <audio controls id="track7">
+      <source src="Track_07_Heart_Is_Dirt_Mastered.wav" type="audio/wav">
+    </audio>
+  </div>
+
+  <footer>
+    <p>L SUDO input, SUNO output</p>
+    <p>MOTIT Records · ∞ / 10 · © 2025</p>
+  </footer>
+
+  <script>
+    const trackOrder = ['track1', 'track2', 'track3', 'track4', 'track5', 'track6', 'track7'];
+    for (let i = 0; i < trackOrder.length - 1; i++) {
+      const current = document.getElementById(trackOrder[i]);
+      const next = document.getElementById(trackOrder[i + 1]);
+      current.addEventListener('ended', () => {
+        next.play();
+        next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+  </script>
+</body>
+</html>
