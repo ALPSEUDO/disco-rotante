@@ -1,92 +1,36 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Disco Rotante – Playlist</title>
-  <style>
-    body {
-      background: black;
-      color: white;
-      font-family: 'Courier New', monospace;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1 {
-      font-size: 2rem;
-      color: #f4d942;
-      margin-bottom: 1rem;
-    }
-    #playlist {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    #playlist li {
-      margin: 0.5rem 0;
-      cursor: pointer;
-      color: #ff9966;
-    }
-    #playlist li:hover {
-      text-decoration: underline;
-    }
-    audio {
-      width: 100%;
-      max-width: 600px;
-      margin-top: 2rem;
-    }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      opacity: 0.8;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <h1>DISCO ROTANTE</h1>
-  <ul id="playlist">
-    <li onclick="playTrack(1)">1. A Perfect Maligned Situation</li>
-    <li onclick="playTrack(2)">2. What Am I Trying To Say Here</li>
-    <li onclick="playTrack(3)">3. Communication Frequency</li>
-    <li onclick="playTrack(4)">4. Extended Play</li>
-    <li onclick="playTrack(5)">5. That's Me</li>
-    <li onclick="playTrack(6)">6. The Hope In You</li>
-    <li onclick="playTrack(7)">7. Heart Is Dirt</li>
-  </ul>
+<html lang='en'>
+<head><meta charset='UTF-8'><title>Disco Rotante – EP</title>
+<style>body{background:#fff8e1;font-family:'Courier New',monospace;padding:2rem;}h1{color:#c62828;}li{margin:0.5rem 0;cursor:pointer;}audio{width:100%;max-width:700px;}</style>
+</head><body>
+<h1>DISCO ROTANTE – EP Player</h1>
+<ul id='playlist'>
+<li onclick='playTrack(1)'>1. A Perfect Maligned Situation</li>
+<li onclick='playTrack(2)'>2. What Am I Trying To Say Here</li>
+<li onclick='playTrack(3)'>3. Communication Frequency</li>
+<li onclick='playTrack(4)'>4. Extended Play</li>
+<li onclick='playTrack(5)'>5. That's Me</li>
+<li onclick='playTrack(6)'>6. The Hope In You</li>
+<li onclick='playTrack(7)'>7. Heart Is Dirt</li>
+</ul>
+<audio id='player' controls autoplay><source id='audioSource' src='' type='audio/mpeg'></audio>
+<script>
+const tracks = [
+  'https://drive.google.com/uc?export=download&id=1W_eXHM3SOqwyi3mc6UHwKSO-_VCZob2e',
+  'https://drive.google.com/uc?export=download&id=15ruHEUaxTFarsRDP8hnf56iD2n4mFh2l',
+  'https://drive.google.com/uc?export=download&id=14OOhGg-l-n7sIDwUN2gmCQlPeHi3hyOn',
+  'https://drive.google.com/uc?export=download&id=154t7s9U6wefu6OwwbXBAWoqJeuXp4pml',
+  'https://drive.google.com/uc?export=download&id=1KeoV6TkhAnW3AVsUZlh8HiBFW8aOi99b',
+  'https://drive.google.com/uc?export=download&id=10e0lE0UyfMopff5UxAmMdLyT79i64OpT',
+  'https://drive.google.com/uc?export=download&id=1Ktg96rhW6YFFzwrE86TflK6Z-IKm__2r',
+];
 
-  <audio id="player" controls autoplay>
-    <source src="Track_01_A_Perfect_Maligned_Situation_Mastered.mp3?v=1" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <footer>
-    <p>L SUDO input, SUNO output</p>
-    <p>MOTIT Records · ∞ / 10 · © 2025</p>
-  </footer>
-
-  <script>
-    const audioFiles = [
-      "Track_01_A_Perfect_Maligned_Situation_Mastered.mp3",
-      "Track_02_What_Am_I_Trying_To_Say_Here_Mastered.mp3",
-      "Track_03_Communication_Frequency_Mastered.mp3",
-      "Track_04_Interlude_Mastered.mp3",
-      "Track_05_Thats_Me_Mastered.mp3",
-      "Track_06_The_Hope_In_You_Mastered.mp3",
-      "Track_07_Heart_Is_Dirt_Mastered.mp3"
-    ];
-
-    function playTrack(index) {
-      const audio = document.getElementById("player");
-      const source = document.getElementById("audioSource");
-      source.src = audioFiles[index - 1];
-      audio.load();
-      audio.play();
-    }
-  </script>
-</body>
-</html>
+function playTrack(index) {
+  const player = document.getElementById('player');
+  const source = document.getElementById('audioSource');
+  source.src = tracks[index - 1];
+  player.load();
+  player.play();
+}
+</script>
+</body></html>
